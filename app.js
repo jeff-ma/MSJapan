@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var sql = require('mssql');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -24,6 +25,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+
+// connect to sql server 
+function connection() {
+    var config = {
+        user: 'INFO445',
+        password: 'GoHuskies!',
+        server: 'is-hay04.ischool.uw.edu',
+        database: 'MSJAPAN'
+    }
+    return sql.connect(config)
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
