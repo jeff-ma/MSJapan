@@ -26,6 +26,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
+app.post('/', function(req, res) {
+  var results = {
+    ProductID: 'Cool',
+    ManufacturerID: 'My computer',
+    ProductTypeID: 'Power',
+    WeightKg: 'Two'
+  }
+  res.render('index', {title: 'New Application', results: results});
+});
+
 // connect to sql server 
 function connection() {
     var config = {

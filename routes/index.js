@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var sql = require("mssql");
-var result;
+var results;
 
 // config for your database
 var config = {
@@ -20,21 +20,21 @@ sql.connect(config, function (err) {
     var request = new sql.Request();
        
     // query to the database and get the records
-    request.query('SELECT * FROM PRODUCT', function (err, results) {
+    request.query('SELECT * FROM PRODUCT', function (err, result) {
         
         if (err) console.log(err);
 
         // send records as a response
         // res.send(recordset);
-        result = results;
-        console.log(results[0]);
+        results = result;
+        console.log(result[0]);
         
     });
 });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {title: 'New Application', result: result});
+  res.render('index', {title: 'New Application', results: results});
 });
 
 module.exports = router;
