@@ -26,27 +26,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
-app.post('/', function(req, res) {
-  var results = {
-    ProductID: 'Cool',
-    ManufacturerID: 'My computer',
-    ProductTypeID: 'Power',
-    WeightKg: 'Two'
-  }
-  res.render('index', {title: 'New Application', results: results});
-});
-
-// connect to sql server 
-function connection() {
-    var config = {
-        user: 'INFO445',
-        password: 'GoHuskies!',
-        server: 'is-hay04.ischool.uw.edu',
-        database: 'MSJAPAN'
-    }
-    return sql.connect(config)
-}
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
