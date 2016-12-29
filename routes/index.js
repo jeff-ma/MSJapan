@@ -22,19 +22,16 @@ sql.connect(config, function (err) {
     var request = new sql.Request();
        
     // query the database and get the records
-    request.query('SELECT * FROM PRODUCT', function (err, result) {
-    console.log('preparing query');
-    //request.execute('dbo.uspGetAllProducts', function (err, recordsets, returnValue) {
-        results = result;
+    request.query('SELECT * FROM PRODUCT', function (err, recordset) {
+        console.log('preparing query');
+        results = recordset;
         console.log('saving results');
-        console.log(result[1000]);
+        console.log(recordset[1000]);
         //console.log(recordsets.length); // count of recordsets returned by the procedure 
         // console.log(recordsets[0].length); // count of rows contained in first recordset 
         // console.log(returnValue); // procedure return value 
         // console.log(recordsets.returnValue); // same as previous line
     });
-        // results = result;
-        // console.log(result[0]);
 });
 
 /* GET home page. */
@@ -45,6 +42,5 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
     res.render('index', {title: 'Test', results: results});
 });
-
 
 module.exports = router;
