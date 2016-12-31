@@ -26,7 +26,7 @@
    <body>
     <!-- Form Name -->
                      <legend>Advanced Search</legend>
-      <div class = "container" style="margin-left:20px;">
+      <div class = "container-fluid" style="margin-left:20px;">
          <div class="row">
             <div class="col-md-4" style="margin-top: 38px;">
                <form class="form-horizontal" action="/" method="post" enctype="multipart/form-data">
@@ -37,9 +37,10 @@
                         <label class="col-md-4 control-label" for="data">Brand Name</label>
                         <div class="col-md-4">
                                <select id="data" name="data" class="form-control">
-                              <option>
-                                something
-                              </option>
+                               <option value="*">All</option>
+                               <% brands.forEach(function(brand){ %>
+                               <option value="<%= brand.ManufacturerName %>"><%= brand.ManufacturerName %></option>
+                               <% }) %>
             <!--                <ul>
                               <li ng-repeat="x in data">
                                  {{x.Brand}}
@@ -50,11 +51,15 @@
                      </div>
                      <!-- Select Basic -->
                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="Storage">Storage</label>
+                        <label class="col-md-4 control-label" for="Storage">Storage Size</label>
                         <div class="col-md-4">
                            <select id="Storage" name="Storage" class="form-control">
-                              <option value="1">df</option>
-                              <option value="2">Option two</option>
+                           <option value="*">Any size</option>
+                              <option value="<=128">128GB or less</option>
+                              <option value="BETWEEN 128 AND 256">128GB - 256GB</option>
+                              <option value="BETWEEN 256 AND 512">256GB - 512GB</option>
+                              <option value="BETWEEN 512 AND 1000">512GB - 1000GB</option>
+                              <option value=">=1000">1000GB or more</option>
                            </select>
                         </div>
                      </div>
