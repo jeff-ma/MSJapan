@@ -54,9 +54,10 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
 	console.log('getting storage');
-	var store = req.body.Storage;
+	var store = req.body.storage;
 	console.log(req.body);
     console.log(store);
+    console.log(req.body.ram);
     res.render('index', {title: 'Test', results: results, brands: brands});
 });
 

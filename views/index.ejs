@@ -29,14 +29,14 @@
       <div class = "container-fluid" style="margin-left:20px;">
          <div class="row">
             <div class="col-md-4" style="margin-top: 38px;">
-               <form class="form-horizontal" action="/" method="post" enctype="multipart/form-data">
+               <form class="form-horizontal" action="/" method="post">
                   <fieldset>
                      
                      <!-- Select Basic -->
                      <div class="form-group">
                         <label class="col-md-4 control-label" for="data">Brand Name</label>
                         <div class="col-md-4">
-                               <select id="data" name="data" class="form-control">
+                               <select id="brand" name="brand" class="form-control">
                                <option value="*">All</option>
                                <% brands.forEach(function(brand){ %>
                                <option value="<%= brand.ManufacturerName %>"><%= brand.ManufacturerName %></option>
@@ -51,9 +51,9 @@
                      </div>
                      <!-- Select Basic -->
                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="Storage">Storage Size</label>
+                        <label class="col-md-4 control-label" for="storage">Storage Size</label>
                         <div class="col-md-4">
-                           <select id="Storage" name="Storage" class="form-control">
+                           <select id="storage" name="storage" class="form-control">
                            <option value="*">Any size</option>
                               <option value="<=128">128GB or less</option>
                               <option value="BETWEEN 128 AND 256">128GB - 256GB</option>
@@ -65,9 +65,9 @@
                      </div>
                      <!-- Select Basic -->
                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="Screen">Screen Size</label>
+                        <label class="col-md-4 control-label" for="screen">Screen Size</label>
                         <div class="col-md-4">
-                           <select id="Screen" name="Screen" class="form-control">
+                           <select id="screen" name="screen" class="form-control">
                               <option value="1">Under 13"</option>
                               <option value="2">13"-15"</option>
                               <option value="3">15"-17"</option>
@@ -77,9 +77,9 @@
                      </div>
                      <!-- Select Basic -->
                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="Weight">Weight</label>
+                        <label class="col-md-4 control-label" for="weight">Weight</label>
                         <div class="col-md-4">
-                           <select id="Weight" name="Weight" class="form-control">
+                           <select id="weight" name="weight" class="form-control">
                               <option value="1">Option one</option>
                               <option value="2">Option two</option>
                            </select>
@@ -87,9 +87,9 @@
                      </div>
                      <!-- Select Basic -->
                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="RAM">RAM</label>
+                        <label class="col-md-4 control-label" for="ram">RAM</label>
                         <div class="col-md-4">
-                           <select id="RAM" name="RAM" class="form-control">
+                           <select id="ram" name="ram" class="form-control">
                               <option value="1">Option one</option>
                               <option value="2">Option two</option>
                            </select>
@@ -97,24 +97,24 @@
                      </div>
                      <!-- Multiple Checkboxes -->
                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="Touch">Touch</label>
+                        <label class="col-md-4 control-label" for="formfactor">2 in 1</label>
+                        <div class="col-md-4">
+                           <select id="formfactor" name="formfactor" class="form-control">
+                              <option value="*">All</option>
+                              <option value="2 in 1">2 in 1</option>
+                              <option value="notebook">Notebook</option>
+                              <option value="tablet">Tablet</option>
+                           </select>
+                        </div>
+                     </div>
+                     <!-- Multiple Checkboxes -->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="touch">Touch</label>
                         <div class="col-md-4">
                            <div class="checkbox">
                               <label for="Touch-0">
                               <input type="checkbox" name="Touch" id="Touch-0" value="1">
                               Touch
-                              </label>
-                           </div>
-                        </div>
-                     </div>
-                     <!-- Multiple Checkboxes -->
-                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="2 in 1">2 in 1</label>
-                        <div class="col-md-4">
-                           <div class="checkbox">
-                              <label for="2 in 1-0">
-                              <input type="checkbox" name="2 in 1" id="2 in 1-0" value="1">
-                              2 in 1
                               </label>
                            </div>
                         </div>
