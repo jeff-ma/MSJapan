@@ -139,17 +139,39 @@
                     <tr>
                       <th>Brand</th>
                       <th>Product</th>
+                      <th>Form Factor</th>
                       <th>Operating System</th>
+                      <th>Display Size</th>
+                      <th>Processor Type</th>
+                      <th>Processor Speed</th>
+                      <th>Ram</th>
+                      <th>Storage Type</th>
+                      <th>Storage Space</th>
+                      <th>Touch Screen</th>
+                      <th>Graphics</th>
+                      <th>Weight</th>
+                      <th>Battery Life</th>
                       <th id="togglePrice" style="cursor:pointer">Price (YEN)</th>
                     </tr>
                   </thead>
                   <tbody>
                     <% results.forEach(function(result){ %>
                     <tr>
-                      <td><%= result.ProductID %></td>
-                      <td><%= result.ManufacturerID %></td>
-                      <td><%= result.ProductTypeID %></td>
+                      <td><%= result.Brand %></td>
+                      <td><%= result.ProductName %></td>
+                      <td><%= result.FormFactorName %></td>
+                      <td><%= result.OSName %></td>
+                      <td><%= result.DisplaySizeInches %></td>
+                      <td><%= result.ProcessorName %></td>
+                      <td><%= result.ProcessorType %></td>
+                      <td><%= result.CacheInGB %></td>
+                      <td><%= result.StorageTypeName %></td>
+                      <td><%= result.StorageSpaceGB %></td>
+                      <td><%= result.TouchScreen %></td>
+                      <td><%= result.GraphicsProcessorName %></td>
                       <td><%= result.WeightKg %></td>
+                      <td><%= result.AVGLifeHours %></td>
+                      <td><span class="currencySymbol">¥</span><span class="priceChange"><%= result.Price %></span></td>
                     </tr>
                     <% }) %>
                     <!-- <tr ng-repeat="x in data">

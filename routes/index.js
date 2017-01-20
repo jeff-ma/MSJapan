@@ -24,11 +24,19 @@ sql.connect(config, function(err) {
     var request = new sql.Request();
        
     // query the database and get the records
-    request.query('SELECT * FROM PRODUCT', function(err, recordset) {
-        console.log('preparing query');
-        results = recordset;
+    // request.query('SELECT * FROM PRODUCT', function(err, recordset) {
+    //     console.log('preparing query');
+    //     results = recordset;
+    //     console.log('saving results');
+    //     console.log(recordset[1000]);
+    // });
+
+    request.execute('uspGetAllProducts', function(err, recordset) {
+        results = recordset[0];
         console.log('saving results');
-        console.log(recordset[1000]);
+        // console.log(results);
+        console.log(results[0]);
+        console.log('printed');
     });
 
     // query distinct brand names 
